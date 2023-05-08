@@ -1,9 +1,9 @@
-// Instantiate Dependencies
+// Setting up Dependencies
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
 
-// Instantiate Express
+// Setting up Express
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -11,12 +11,12 @@ const PORT = process.env.PORT || 3001;
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 
-// For Error Handling
+// Setting up for Error Handling
 const { validateNote } = require('./middlewares/validationMiddleware');
 const { errorHandler } = require('./middlewares/errorHandlerMiddleware');
 
 
-// Express Middleware
+// Middleware
 /* ------------------------------- */
 
 // Parses requests with urlencoded payloads
@@ -28,8 +28,6 @@ app.use(express.json());
 
 // Serves static files in "public" folder
 app.use(express.static("public"));
-
-/* ------------------------------- */
  
 // Routes
 app.use('/api', apiRoutes);
@@ -40,3 +38,6 @@ app.use(errorHandler);
 
 // Start server
 app.listen(PORT, () => console.log(`Notes App Is Live at ${PORT}`));
+
+
+/* ------------------------------- */
