@@ -8,12 +8,12 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Setting up some routes to our assets
-const apiRoutes = require('./routes/apiRoutes');
-const htmlRoutes = require('./routes/htmlRoutes');
+const apiRoutes = require('./Develop/public/assets/js/apiRoutes');
+const htmlRoutes = require('./Develop/public/assets/js/htmlRoutes');
 
 // Setting up for Error Handling
-const { validateNote } = require('./middlewares/validationMiddleware');
-const { errorHandler } = require('./middlewares/errorHandlerMiddleware');
+const { validateNote } = require('./Develop/public/assets/js/validationMiddleware');
+const { errorHandler } = require('./Develop/public/assets/js/errorHandlerMiddleware');
 
 
 // Middleware
