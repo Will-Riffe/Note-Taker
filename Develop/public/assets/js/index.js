@@ -1,3 +1,4 @@
+// Declaring our element variables
 let noteHeader;
 let noteTxt;
 let saveBtn;
@@ -129,7 +130,7 @@ const handleRenderSaveBtn = () => {
 };
 
 // Render the list of note titles in the sidebar
-const rendersavedNotes = async (notes) => {
+const renderSavedNotes = async (notes) => {
 
   //parses notes as JSON
   let jsonNotes = await notes.json();
@@ -193,7 +194,7 @@ const rendersavedNotes = async (notes) => {
 };
 
 // Retrieves notes from database, renders them in sidebar
-const getAndRenderNotes = () => getNotes().then(rendersavedNotes);
+const getAndRenderNotes = () => getNotes().then(renderSavedNotes);
 
 /* Adds event listeners to "save" and "new" icons when user is on 
   notes the page */
