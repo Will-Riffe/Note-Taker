@@ -24,6 +24,9 @@
   ## Contributing
   N/A
 
+  ## Reference
+  I initially started by reviewing [Collin McCarter's Code](https://github.com/collin-mccarter/Note-Taker) on GitHub if there is anything particularly similar, though I think mine is sufficiently different/unique (if/when it works).
+
   ## Tests
   N/A
 
