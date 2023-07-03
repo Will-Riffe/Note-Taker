@@ -1,5 +1,5 @@
 // Le Dependencies
-const router = require("express").router();
+const router = require("express").Router();
 const fs = require("fs");
 
 const notepad = require("../db/db.json")
@@ -20,7 +20,7 @@ router.post("/notepad", (req, res) => {
         noteId.id = index + 1;
     });
     
-    fs.writeFile("../db/db.json", JSON.stringify(notepad), (err) => {
+    fs.writeFile("db/db.json", JSON.stringify(notepad), (err) => {
         if(err) throw err;
     });
     
@@ -31,13 +31,13 @@ router.post("/notepad", (req, res) => {
 
 
 // Settup for DELETE Route
-router.delete("/api/notes/:id", (req, res) => {
-
+router.delete("/notepad/:id", (req, res) => {
+    console.log(req.params)
     const noteDelete = Number(req.params.id);
     const noteUpdate =
-        notepad.filter(note => note.id !== Number(noteDelete));
+        notepad.filter(notepad => notepad.id !== Number(noteDelete));
 
-    fs.writeFile("../db/db.json", JSON.stringify(noteUpdate), (err) => {
+    fs.writeFile("db/db.json", JSON.stringify(noteUpdate), (err) => {
         if (err) throw err;
     });
 
