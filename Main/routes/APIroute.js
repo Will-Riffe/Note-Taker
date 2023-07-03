@@ -28,3 +28,20 @@ router.post("/notepad", (req, res) => {
     res.end();
     
 })
+
+
+// Settup for DELETE Route
+router.delete("/api/notes/:id", (req, res) => {
+
+    const noteDelete = Number(req.params.id);
+    const noteUpdate =
+        notepad.filter(note => note.id !== Number(noteDelete));
+
+    fs.writeFile("../db/db.json", JSON.stringify(noteUpdate), (err) => {
+        if (err) throw err;
+    });
+
+    res.json(true);
+    res.end();
+})
+
