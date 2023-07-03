@@ -45,3 +45,4 @@ router.delete("/api/notes/:id", (req, res) => {
     res.end();
 })
 
+module.exports = router;
