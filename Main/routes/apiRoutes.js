@@ -34,8 +34,8 @@ router.post("/notes", (req, res) => {
 router.delete("/notes/:id", (req, res) => {
     console.log(req.params)
     const noteDelete = Number(req.params.id);
-    const noteUpdate =
-        notes.filter(notes => notes.id !== Number(noteDelete));
+    const noteUpdate = 
+        notes.filter(note => note.id !== noteDelete);
 
     fs.writeFile("db/db.json", JSON.stringify(noteUpdate), (err) => {
         if (err) throw err;
